@@ -2,7 +2,7 @@ import React from 'react'
 import Directory from '../../components/directory/directory'
 import './homepage.styles.scss'
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <div className='homepage'>
       <div className='directory-menu'>
@@ -11,3 +11,5 @@ export const HomePage = () => {
     </div>
   )
 }
+
+export default HomePage
