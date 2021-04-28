@@ -14,14 +14,14 @@ export default class SignIn extends Component {
     }
   }
 
-  handleSubmin = event => {
+  handleChange = event => {
     const { value, name } = event.target
     this.setState({ [name]: value })
   }
 
-  handleChange = async event => {
-    event.preventDefault()
+  handleSubmin = async event => {
     const { email, password } = this.state
+    event.preventDefault()
     try {
       await auth.signInWithEmailAndPassword(email, password)
       this.setState({ email: '', password: '' })
@@ -41,7 +41,7 @@ export default class SignIn extends Component {
             name='email'
             label='Email'
             value={this.state.email}
-            handleChange={this.handleSubmin}
+            handleChange={this.handleChange}
             required
           />
           <FormInput
@@ -49,7 +49,7 @@ export default class SignIn extends Component {
             name='password'
             label='Password'
             value={this.state.password}
-            handleChange={this.handleSubmin}
+            handleChange={this.handleChange}
             required
           />
           <div className='buttons'>
